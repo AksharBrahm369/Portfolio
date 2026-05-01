@@ -14,7 +14,7 @@ export default function PhilosophySection() {
       <div className={styles.container}>
         <div className={styles.coFounderWrapper}>
           <a
-            href="https://niramaystudio.qzz.io/"
+            href="niramaystudio.blogspot.com"
             target="_blank"
             rel="noopener noreferrer"
             className={styles.coFounderLink}
