@@ -1,0 +1,290 @@
+.section {
+  padding: 120px 24px;
+  position: relative;
+  text-align: center;
+}
+
+.topDivider, .bottomDivider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0, 245, 255, 0.15), rgba(168, 85, 247, 0.15), transparent);
+  margin-bottom: 80px;
+}
+.bottomDivider { margin-top: 80px; margin-bottom: 0; }
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.coFounderWrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.coFounderLink {
+  font-family: 'Syne', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #00f5ff;
+  text-decoration: none;
+  padding: 8px 20px;
+  border-radius: 30px;
+  background: rgba(0, 245, 255, 0.05);
+  border: 1px solid rgba(0, 245, 255, 0.2);
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+}
+
+.coFounderLink:hover {
+  background: rgba(0, 245, 255, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 245, 255, 0.15);
+}
+
+.sectionLabel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.labelLine {
+  display: block;
+  width: 48px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0, 245, 255, 0.4));
+}
+
+.labelLine:last-child {
+  background: linear-gradient(90deg, rgba(0, 245, 255, 0.4), transparent);
+}
+
+.labelText {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  color: #00f5ff;
+  letter-spacing: 0.1em;
+}
+
+.mainHeading {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: #e2e8f0;
+  margin-bottom: 64px;
+}
+
+.headingAccent {
+  background: linear-gradient(135deg, #14b8a6, #3b82f6, #a855f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.narrativeContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-bottom: 72px;
+  text-align: left;
+  padding: 40px;
+  background: rgba(12, 18, 32, 0.6);
+  border: 1px solid rgba(148, 163, 184, 0.08);
+  border-radius: 24px;
+  backdrop-filter: blur(10px);
+}
+
+.narrativeBlock {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 24px 0;
+}
+
+.narrativeDivider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(148, 163, 184, 0.1), transparent);
+}
+
+.narrativeNumber {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: #475569;
+  flex-shrink: 0;
+  padding-top: 4px;
+  width: 24px;
+}
+
+.narrativeText {
+  font-size: 1.15rem;
+  color: #94a3b8;
+  line-height: 1.75;
+}
+
+.highlightCyan { color: #00f5ff; font-weight: 600; }
+.highlightViolet { color: #a855f7; font-weight: 600; }
+.highlightTeal { color: #14b8a6; font-weight: 600; }
+
+/* Concluding statement */
+.concludingWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+  margin-bottom: 72px;
+}
+
+.concludingLine {
+  width: 80px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(168, 85, 247, 0.4), transparent);
+}
+
+.concluding {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-weight: 700;
+  color: #94a3b8;
+  line-height: 1.3;
+  text-align: center;
+}
+
+.concludingAccent {
+  display: block;
+  background: linear-gradient(135deg, #00f5ff 0%, #a855f7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 1.2em;
+}
+
+/* Pillars */
+.pillarsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.pillar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 24px 16px;
+  background: rgba(12, 18, 32, 0.5);
+  border: 1px solid rgba(148, 163, 184, 0.08);
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.pillar:hover {
+  border-color: rgba(0, 245, 255, 0.2);
+  background: rgba(0, 245, 255, 0.03);
+  transform: translateY(-4px);
+}
+
+.pillarIcon {
+  font-size: 1.6rem;
+  color: #00f5ff;
+  line-height: 1;
+}
+
+.pillarLabel {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #e2e8f0;
+  text-align: center;
+}
+
+.pillarDesc {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  color: #475569;
+  text-align: center;
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .section { padding: 80px 16px; }
+  .pillarsGrid { grid-template-columns: repeat(2, 1fr); }
+  .narrativeContainer { padding: 24px; }
+}
+
+@media (max-width: 480px) {
+  .pillarsGrid { grid-template-columns: 1fr; }
+  .section { padding: 60px 16px; overflow: hidden; }
+}
+
+/* ═══ LIGHT THEME OVERRIDES ═══ */
+
+[data-theme="light"] .mainHeading {
+  color: #0f172a;
+}
+
+/* Narrative container (the glassmorphism box) */
+[data-theme="light"] .narrativeContainer {
+  background: rgba(255, 255, 255, 0.85);
+  border-color: rgba(15, 23, 42, 0.08);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+}
+
+[data-theme="light"] .narrativeText {
+  color: #475569;
+}
+
+[data-theme="light"] .narrativeNumber {
+  color: #94a3b8;
+}
+
+/* Concluding statement */
+[data-theme="light"] .concluding {
+  color: #475569;
+}
+
+/* Pillar cards */
+[data-theme="light"] .pillar {
+  background: rgba(255, 255, 255, 0.85);
+  border-color: rgba(15, 23, 42, 0.08);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="light"] .pillar:hover {
+  background: rgba(0, 200, 220, 0.05);
+  border-color: rgba(0, 180, 200, 0.25);
+}
+
+/* Pillar label was hardcoded #e2e8f0 (invisible on light) */
+[data-theme="light"] .pillarLabel {
+  color: #0f172a;
+}
+
+[data-theme="light"] .pillarDesc {
+  color: #64748b;
+}
+
+[data-theme="light"] .labelText {
+  color: #00b8cc;
+}
+
+[data-theme="light"] .topDivider,
+[data-theme="light"] .bottomDivider {
+  background: linear-gradient(90deg, transparent, rgba(0, 180, 200, 0.2), rgba(140, 60, 220, 0.15), transparent);
+}
+
+[data-theme="light"] .coFounderLink {
+  color: #00b8cc;
+  background: rgba(0, 184, 204, 0.05);
+  border-color: rgba(0, 184, 204, 0.2);
+}
+
+[data-theme="light"] .coFounderLink:hover {
+  background: rgba(0, 184, 204, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 184, 204, 0.15);
+}
