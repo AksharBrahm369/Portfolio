@@ -92,7 +92,8 @@ export default function HeroSection() {
                   1000,
                   "AI based Web Services",
                   1000,
-                  "Saas Products "
+                  "Saas Products ",
+                  1000,
                 ]}
                 wrapper="span"
                 speed={50}
