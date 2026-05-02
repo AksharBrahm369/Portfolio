@@ -9,7 +9,7 @@ export const translations = {
       line1: "Scalable Architect", mid: "who builds", line2: "Resilient, Intelligent", accent: "Systems.",
       subtext: "Software Engineering, AI, and React/Next.js that scale from zero to millions — with precision, resilience, and purpose.",
       tags: ["Software Engineer", "AI Systems Builder", "Platform Engineer"],
-      viewWork: "View My Work", downloadCV: "Download CV",
+      viewWork: "View My Work", downloadCV: "Download Resume",
       openTo: "Open to opportunities", verified: "Verified", scrollTo: "Scroll to explore",
       metrics: [{ value: "3+", label: "Years Exp" }, { value: "5+", label: "Systems Built" }, { value: "99.9%", label: "Uptime SLA" }, { value: "10+", label: "Req" }],
       stat1Val: "3+", stat1Label: "Years Exp", stat2Val: "5+", stat2Label: "Systems Built",
