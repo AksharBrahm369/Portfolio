@@ -2,7 +2,8 @@
 
 // NOTE: Github, Linkedin, Twitter do NOT exist in lucide-react v1.9.0+
 // They were removed in a major cleanup. Use inline SVGs instead (see socials below).
-import { Mail, Calendar } from "lucide-react";
+import { useState } from "react";
+import { Mail, Calendar, X } from "lucide-react";
 import { useApp } from "@/context/AppContext";
 import { translations } from "@/translations";
 import styles from "./ContactSection.module.css";
@@ -11,6 +12,7 @@ import styles from "./ContactSection.module.css";
 export default function ContactSection() {
   const { language } = useApp();
   const t = translations[language].contact;
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <section id="contact" className={styles.section}>
@@ -50,14 +52,14 @@ export default function ContactSection() {
             </div>
 
             <div className={styles.ctaButtons}>
-              <a href="mailto:hello@example.com" className={styles.primaryCta}>
+              <a href="mailto:darshanzala369@gmail.com" className={styles.primaryCta}>
                 <Mail size={18} />
                 {t.contactBtn}
               </a>
-              <a href="#schedule" className={styles.secondaryCta}>
+              <button onClick={() => setIsModalOpen(true)} className={styles.secondaryCta}>
                 <Calendar size={18} />
                 {t.scheduleBtn}
-              </a>
+              </button>
             </div>
 
             {/* Social icons — inline SVGs because lucide-react v1.9.0+ removed brand icons */}
@@ -92,6 +94,47 @@ export default function ContactSection() {
 
         </footer>
       </div>
+
+      {isModalOpen && (
+        <div className={styles.modalOverlay} onClick={() => setIsModalOpen(false)}>
+          <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
+            <button className={styles.closeBtn} onClick={() => setIsModalOpen(false)} aria-label="Close modal">
+              <X size={24} />
+            </button>
+            <h3 className={styles.modalHeading}>Schedule a Call</h3>
+            <p className={styles.modalSub}>Fill out the form below and I'll get back to you.</p>
+            <form action="https://formsubmit.co/darshanzala369@gmail.com" method="POST" className={styles.form}>
+              <input type="hidden" name="_subject" value="New Call Request from Portfolio" />
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_next" value={typeof window !== 'undefined' ? window.location.href : ""} />
+              
+              <div className={styles.formGroup}>
+                <label htmlFor="name" className={styles.label}>Name</label>
+                <input type="text" id="name" name="name" required placeholder="John Doe" className={styles.input} />
+              </div>
+
+              <div className={styles.formGroup}>
+                <label htmlFor="email" className={styles.label}>Email</label>
+                <input type="email" id="email" name="email" required placeholder="john@example.com" className={styles.input} />
+              </div>
+
+              <div className={styles.formGroup}>
+                <label htmlFor="date" className={styles.label}>Preferred Date & Time</label>
+                <input type="datetime-local" id="date" name="date" required className={styles.input} />
+              </div>
+
+              <div className={styles.formGroup}>
+                <label htmlFor="message" className={styles.label}>What would you like to discuss?</label>
+                <textarea id="message" name="message" required rows={4} placeholder="Tell me a bit about your project or inquiry..." className={styles.textarea}></textarea>
+              </div>
+
+              <button type="submit" className={styles.submitBtn}>
+                Request Call
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
