@@ -294,11 +294,11 @@
   inset: 0;
   background: rgba(8, 13, 26, 0.85);
   backdrop-filter: blur(8px);
-  z-index: 100;
+  z-index: 9999;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 24px;
+  padding: 16px;
   animation: fadeIn 0.3s ease;
 }
 
@@ -306,7 +306,7 @@
   position: relative;
   width: 100%;
   max-width: 500px;
-  max-height: 90vh;
+  max-height: 85dvh;
   overflow-y: auto;
   background: rgba(12, 18, 32, 0.95);
   border: 1px solid rgba(0, 245, 255, 0.2);
