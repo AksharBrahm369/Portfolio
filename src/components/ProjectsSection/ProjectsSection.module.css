@@ -19,7 +19,7 @@
   justify-content: center;
   gap: 16px;
   margin-bottom: 20px;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-jetbrains-mono), monospace;
   font-size: 0.75rem;
   color: #00f5ff;
   letter-spacing: 0.1em;
@@ -33,7 +33,7 @@
 }
 
 .heading {
-  font-family: 'Syne', sans-serif;
+  font-family: var(--font-syne), sans-serif;
   font-size: clamp(2rem, 4vw, 3.2rem);
   font-weight: 800;
   letter-spacing: -0.03em;
@@ -51,7 +51,7 @@
 .subheading {
   font-size: 1rem;
   color: #475569;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-jetbrains-mono), monospace;
 }
 
 /* Grid */
@@ -122,7 +122,7 @@
   position: absolute;
   bottom: 4px;
   right: 6px;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-jetbrains-mono), monospace;
   font-size: 0.55rem;
   opacity: 0.5;
   letter-spacing: 0.1em;
@@ -144,7 +144,7 @@
 }
 
 .badge {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-jetbrains-mono), monospace;
   font-size: 0.62rem;
   padding: 3px 10px;
   border-radius: 50px;
@@ -158,7 +158,7 @@
 }
 
 .year {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-jetbrains-mono), monospace;
   font-size: 0.65rem;
   color: #475569;
   margin-top: auto;
@@ -168,7 +168,7 @@
 .titleGroup { display: flex; flex-direction: column; gap: 4px; }
 
 .cardTitle {
-  font-family: 'Syne', sans-serif;
+  font-family: var(--font-syne), sans-serif;
   font-size: 1.15rem;
   font-weight: 700;
   letter-spacing: -0.02em;
@@ -178,7 +178,7 @@
 .cardSubtitle {
   font-size: 0.83rem;
   color: #64748b;
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: var(--font-space-grotesk), sans-serif;
 }
 
 /* Impact */
@@ -213,7 +213,7 @@
 }
 
 .techTag {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-jetbrains-mono), monospace;
   font-size: 0.65rem;
   padding: 3px 10px;
   border-radius: 4px;
@@ -243,7 +243,7 @@
   padding: 9px 18px;
   border-radius: 50px;
   color: rgba(5, 8, 20, 0.95);
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: var(--font-space-grotesk), sans-serif;
   font-weight: 700;
   font-size: 0.8rem;
   text-decoration: none;
@@ -266,7 +266,7 @@
   color: #64748b;
   background: transparent;
   border: 1px solid rgba(148, 163, 184, 0.12);
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: var(--font-space-grotesk), sans-serif;
   font-size: 0.78rem;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -435,7 +435,7 @@
 }
 
 .modalTitle {
-  font-family: 'Syne', sans-serif;
+  font-family: var(--font-syne), sans-serif;
   font-size: 1.8rem;
   font-weight: 700;
   color: #e2e8f0;
@@ -454,7 +454,7 @@
 }
 
 .csSection h4 {
-  font-family: 'Syne', sans-serif;
+  font-family: var(--font-syne), sans-serif;
   font-size: 1.2rem;
   color: #00f5ff;
   margin-bottom: 12px;
@@ -481,7 +481,7 @@
   position: absolute;
   left: 0;
   color: #a855f7;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-jetbrains-mono), monospace;
 }
 
 .csSection strong {

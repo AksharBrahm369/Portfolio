@@ -19,7 +19,7 @@
   justify-content: center;
   gap: 16px;
   margin-bottom: 20px;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-jetbrains-mono), monospace;
   font-size: 0.75rem;
   color: #00f5ff;
   letter-spacing: 0.1em;
@@ -33,7 +33,7 @@
 }
 
 .heading {
-  font-family: 'Syne', sans-serif;
+  font-family: var(--font-syne), sans-serif;
   font-size: clamp(2rem, 4vw, 3.2rem);
   font-weight: 800;
   letter-spacing: -0.03em;
@@ -51,7 +51,7 @@
 .subheading {
   font-size: 1rem;
   color: #475569;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-jetbrains-mono), monospace;
 }
 
 /* Grid */
@@ -126,7 +126,7 @@
 }
 
 .date {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-jetbrains-mono), monospace;
   font-size: 0.75rem;
   color: #475569;
   padding-top: 4px;
@@ -136,7 +136,7 @@
 .titleGroup { display: flex; flex-direction: column; gap: 4px; }
 
 .cardTitle {
-  font-family: 'Syne', sans-serif;
+  font-family: var(--font-syne), sans-serif;
   font-size: 1.15rem;
   font-weight: 700;
   letter-spacing: -0.02em;
@@ -147,7 +147,7 @@
 .cardIssuer {
   font-size: 0.85rem;
   color: #94a3b8;
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: var(--font-space-grotesk), sans-serif;
 }
 
 /* Credential ID */
@@ -162,7 +162,7 @@
 }
 
 .credentialLabel {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-jetbrains-mono), monospace;
   font-size: 0.65rem;
   color: #64748b;
   text-transform: uppercase;
@@ -170,7 +170,7 @@
 }
 
 .credentialValue {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-jetbrains-mono), monospace;
   font-size: 0.8rem;
   color: var(--accent);
 }
@@ -191,7 +191,7 @@
   padding: 10px 18px;
   border-radius: 50px;
   color: rgba(5, 8, 20, 0.95);
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: var(--font-space-grotesk), sans-serif;
   font-weight: 700;
   font-size: 0.85rem;
   text-decoration: none;

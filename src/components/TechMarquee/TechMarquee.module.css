@@ -29,7 +29,7 @@
 .track {
   display: flex;
   gap: 0;
-  animation: marquee 30s linear infinite;
+  animation: marquee 10s linear infinite;
   will-change: transform;
   white-space: nowrap;
 }
