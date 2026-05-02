@@ -231,16 +231,22 @@
 /* Actions */
 .cardActions {
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
-  align-items: center;
+  align-items: stretch;
   margin-top: auto;
 }
 
 .viewBtn {
-  display: inline-flex;
+  display: flex;
+  flex: 1;
+  min-width: 140px;
   align-items: center;
+  justify-content: center;
+  text-align: center;
+  white-space: nowrap;
   gap: 6px;
-  padding: 9px 18px;
+  padding: 10px 18px;
   border-radius: 50px;
   color: rgba(5, 8, 20, 0.95);
   font-family: var(--font-space-grotesk), sans-serif;
@@ -258,10 +264,15 @@
 }
 
 .caseStudyBtn {
-  display: inline-flex;
+  display: flex;
+  flex: 1;
+  min-width: 120px;
   align-items: center;
+  justify-content: center;
+  text-align: center;
+  white-space: nowrap;
   gap: 5px;
-  padding: 9px 16px;
+  padding: 10px 16px;
   border-radius: 50px;
   color: #64748b;
   background: transparent;

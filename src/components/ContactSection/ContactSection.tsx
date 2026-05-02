@@ -3,7 +3,7 @@
 // NOTE: Github, Linkedin, Twitter do NOT exist in lucide-react v1.9.0+
 // They were removed in a major cleanup. Use inline SVGs instead (see socials below).
 import { useState } from "react";
-import { Mail, Calendar, X } from "lucide-react";
+import { Mail, Calendar, ArrowLeft } from "lucide-react";
 import { useApp } from "@/context/AppContext";
 import { translations } from "@/translations";
 import styles from "./ContactSection.module.css";
@@ -98,10 +98,12 @@ export default function ContactSection() {
       {isModalOpen && (
         <div className={styles.modalOverlay} onClick={() => setIsModalOpen(false)}>
           <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
-            <button className={styles.closeBtn} onClick={() => setIsModalOpen(false)} aria-label="Close modal">
-              <X size={24} />
-            </button>
-            <h3 className={styles.modalHeading}>Schedule a Call</h3>
+            <div className={styles.modalHeader}>
+              <button className={styles.backBtn} onClick={() => setIsModalOpen(false)} aria-label="Go back to contact section">
+                <ArrowLeft size={24} />
+              </button>
+              <h3 className={styles.modalHeading}>Schedule a Call</h3>
+            </div>
             <p className={styles.modalSub}>Fill out the form below and I'll get back to you.</p>
             <form action="https://formsubmit.co/darshanzala369@gmail.com" method="POST" className={styles.form}>
               <input type="hidden" name="_subject" value="New Call Request from Portfolio" />

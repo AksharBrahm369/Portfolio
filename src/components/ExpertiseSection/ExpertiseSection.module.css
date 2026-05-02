@@ -57,13 +57,36 @@
 
 .subheading {
   font-family: var(--font-jetbrains-mono), monospace;
-  font-size: 0.85rem;
+  font-size: min(2.6vw, 0.85rem);
   color: #475569;
-  letter-spacing: 0.05em;
+  letter-spacing: -0.02em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.subheadingText {
+  display: inline-block;
+}
+
+.flowWrapper {
+  display: flex;
+  align-items: center;
+  gap: 2px;
 }
 
 .flow {
   color: #00f5ff;
+}
+
+.arrow {
+  color: #475569;
+  opacity: 0.5;
+  margin: 0 2px;
 }
 
 /* Grid */

@@ -32,13 +32,15 @@ export default function ExpertiseSection() {
             <span className={styles.headingAccent}>{t.accent}</span>
           </h2>
           <p className={styles.subheading}>
-            {t.subheading}{" "}
-            {t.flow.map((f, i) => (
-              <span key={f}>
-                <span className={styles.flow}>{f}</span>
-                {i < t.flow.length - 1 && " → "}
-              </span>
-            ))}
+            <span className={styles.subheadingText}>{t.subheading}</span>
+            <span className={styles.flowWrapper}>
+              {t.flow.map((f, i) => (
+                <span key={f}>
+                  <span className={styles.flow}>{f}</span>
+                  {i < t.flow.length - 1 && <span className={styles.arrow}>→</span>}
+                </span>
+              ))}
+            </span>
           </p>
         </div>
 

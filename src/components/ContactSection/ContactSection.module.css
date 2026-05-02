@@ -306,6 +306,8 @@
   position: relative;
   width: 100%;
   max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
   background: rgba(12, 18, 32, 0.95);
   border: 1px solid rgba(0, 245, 255, 0.2);
   border-radius: 24px;
@@ -314,10 +316,14 @@
   animation: slideUp 0.3s ease;
 }
 
-.closeBtn {
-  position: absolute;
-  top: 24px;
-  right: 24px;
+.modalHeader {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.backBtn {
   background: transparent;
   border: none;
   color: #64748b;
@@ -327,20 +333,21 @@
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  padding: 4px;
+  padding: 6px;
+  margin-left: -8px;
 }
 
-.closeBtn:hover {
-  color: #e2e8f0;
-  background: rgba(148, 163, 184, 0.1);
+.backBtn:hover {
+  color: #00f5ff;
+  background: rgba(0, 245, 255, 0.1);
 }
 
 .modalHeading {
   font-family: var(--font-syne), sans-serif;
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 5vw, 2rem);
   font-weight: 700;
   color: #e2e8f0;
-  margin-bottom: 12px;
+  margin-bottom: 0;
 }
 
 .modalSub {
@@ -424,6 +431,7 @@
   .footerNav { justify-content: center; text-align: center; }
   .footerLinks { justify-content: center; }
   .bottomRow { justify-content: center; }
+  .modalContent { padding: 24px; }
 }
 
 /* ═══ LIGHT THEME OVERRIDES ═══ */
@@ -537,11 +545,11 @@
   box-shadow: 0 0 0 2px rgba(0, 184, 204, 0.15);
 }
 
-[data-theme="light"] .closeBtn {
+[data-theme="light"] .backBtn {
   color: #64748b;
 }
 
-[data-theme="light"] .closeBtn:hover {
-  color: #0f172a;
-  background: rgba(15, 23, 42, 0.06);
+[data-theme="light"] .backBtn:hover {
+  color: #00b8cc;
+  background: rgba(0, 184, 204, 0.06);
 }
