@@ -1,8 +1,8 @@
 import Navbar from "@/components/Navbar/Navbar";
 import HeroSection from "@/components/HeroSection/HeroSection";
+import ServicesSection from "@/components/ServicesSection/ServicesSection";
 import TechMarquee from "@/components/TechMarquee/TechMarquee";
 import PhilosophySection from "@/components/PhilosophySection/PhilosophySection";
-import ExpertiseSection from "@/components/ExpertiseSection/ExpertiseSection";
 import CertificatesSection from "@/components/CertificatesSection/CertificatesSection";
 import ProjectsSection from "@/components/ProjectsSection/ProjectsSection";
 import Chatbot from "@/components/Chatbot/Chatbot";
@@ -14,9 +14,9 @@ export default function HomePage() {
       <Navbar />
       <main>
         <HeroSection />
-        <TechMarquee />
+         <TechMarquee />
+        <ServicesSection />
         <PhilosophySection />
-        <ExpertiseSection />
         <CertificatesSection />
         <ProjectsSection />
         <ContactSection />

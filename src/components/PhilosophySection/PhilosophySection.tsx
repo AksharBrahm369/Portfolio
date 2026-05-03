@@ -13,14 +13,7 @@ export default function PhilosophySection() {
       <div className={styles.topDivider} />
       <div className={styles.container}>
         <div className={styles.coFounderWrapper}>
-          <a
-            href="niramaystudio.blogspot.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.coFounderLink}
-          >
-            co-founder of NIramay Studio
-          </a>
+          
         </div>
 
         <div className={styles.sectionLabel}>
