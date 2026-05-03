@@ -88,9 +88,10 @@ export default function HeroSection() {
                 sequence={[
                   `${t.line2} ${t.accent}`,
                   1000,
-                  "Softwares",
-                  1000,
                   "AI based Web Services",
+                  1000,
+                  "Queryable Structured Projects",
+                  1000,
                   1000,
                   "Saas Products ",
                   1000,
