@@ -120,7 +120,7 @@ export default function HeroSection() {
               {t.viewWork}
               <ArrowRight size={16} />
             </a>
-            <a href="#contact" className="btn-secondary">
+            <a href="/darshan-zala%20(1).pdf" className="btn-secondary" target="_blank" rel="noopener noreferrer">
               <Download size={15} />
               {t.downloadCV}
             </a>
