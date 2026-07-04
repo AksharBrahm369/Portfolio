@@ -17,30 +17,82 @@
 }
 
 .coFounderWrapper {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 24px;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  max-width: 100%;
+  margin-bottom: 32px;
+  padding: 10px 16px 10px 18px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background:
+    linear-gradient(135deg, rgba(8, 13, 26, 0.92), rgba(12, 18, 32, 0.86)) padding-box,
+    linear-gradient(135deg, rgba(0, 245, 255, 0.85), rgba(240, 171, 252, 0.72), rgba(20, 184, 166, 0.72)) border-box;
+  box-shadow: 0 12px 30px rgba(0, 245, 255, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.02) inset;
+  color: #e2e8f0;
+  font-family: 'Space Grotesk', sans-serif;
+  overflow: hidden;
+}
+
+.coFounderPrefix {
+  color: #94a3b8;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.74rem;
+  font-weight: 600;
+  line-height: 1;
 }
 
 .coFounderLink {
-  font-family: var(--font-syne), sans-serif;
-  font-size: 1rem;
-  font-weight: 600;
-  color: #00f5ff;
-  text-decoration: none;
-  padding: 8px 20px;
-  border-radius: 30px;
-  background: rgba(0, 245, 255, 0.05);
-  border: 1px solid rgba(0, 245, 255, 0.2);
-  transition: all 0.3s ease;
+  position: relative;
   display: inline-flex;
   align-items: center;
+  text-decoration: none;
 }
 
-.coFounderLink:hover {
-  background: rgba(0, 245, 255, 0.1);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 245, 255, 0.15);
+.coFounderLink::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -5px;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #00f5ff, #f0abfc, #14b8a6);
+  box-shadow: 0 0 14px rgba(0, 245, 255, 0.45);
+  opacity: 0;
+  transform: scaleX(0.35);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.coFounderBrand {
+  background: linear-gradient(135deg, #00f5ff 0%, #f0abfc 48%, #14b8a6 100%);
+  background-clip: text;
+  color: transparent;
+  font-family: 'Syne', sans-serif;
+  font-size: 1.08rem;
+  font-weight: 800;
+  line-height: 1;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  white-space: nowrap;
+}
+
+.coFounderLink:hover::after,
+.coFounderLink:focus-visible::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.coFounderLink:hover .coFounderBrand,
+.coFounderLink:focus-visible .coFounderBrand {
+  text-shadow: 0 0 18px rgba(0, 245, 255, 0.42), 0 0 24px rgba(240, 171, 252, 0.24);
+}
+
+.coFounderLink:focus-visible {
+  border-radius: 6px;
+  outline: 2px solid #00f5ff;
+  outline-offset: 5px;
 }
 
 .sectionLabel {
@@ -220,6 +272,13 @@
 @media (max-width: 480px) {
   .pillarsGrid { grid-template-columns: 1fr; }
   .section { padding: 60px 16px; overflow: hidden; }
+  .coFounderWrapper {
+    gap: 8px;
+    justify-content: center;
+    padding: 10px 14px;
+  }
+  .coFounderPrefix { font-size: 0.68rem; }
+  .coFounderBrand { font-size: 0.98rem; }
 }
 
 /* ═══ LIGHT THEME OVERRIDES ═══ */
@@ -278,13 +337,14 @@
   background: linear-gradient(90deg, transparent, rgba(0, 180, 200, 0.2), rgba(140, 60, 220, 0.15), transparent);
 }
 
-[data-theme="light"] .coFounderLink {
-  color: #00b8cc;
-  background: rgba(0, 184, 204, 0.05);
-  border-color: rgba(0, 184, 204, 0.2);
+[data-theme="light"] .coFounderWrapper {
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(248, 250, 252, 0.92)) padding-box,
+    linear-gradient(135deg, rgba(0, 184, 204, 0.85), rgba(168, 85, 247, 0.62), rgba(20, 184, 166, 0.72)) border-box;
+  box-shadow: 0 12px 26px rgba(0, 150, 180, 0.12), 0 4px 18px rgba(15, 23, 42, 0.06);
+  color: #0f172a;
 }
 
-[data-theme="light"] .coFounderLink:hover {
-  background: rgba(0, 184, 204, 0.1);
-  box-shadow: 0 4px 12px rgba(0, 184, 204, 0.15);
+[data-theme="light"] .coFounderPrefix {
+  color: #475569;
 }

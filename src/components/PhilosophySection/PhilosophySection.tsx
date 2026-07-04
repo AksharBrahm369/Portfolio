@@ -13,7 +13,16 @@ export default function PhilosophySection() {
       <div className={styles.topDivider} />
       <div className={styles.container}>
         <div className={styles.coFounderWrapper}>
-          
+          <span className={styles.coFounderPrefix}>Founder Of</span>
+          <a
+            href="https://darshonic.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.coFounderLink}
+            aria-label="Visit DarshonicTech company site"
+          >
+            <span className={styles.coFounderBrand}>DarshonicTech</span>
+          </a>
         </div>
 
         <div className={styles.sectionLabel}>
