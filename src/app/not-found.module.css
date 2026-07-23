@@ -1,0 +1,1 @@
+.main{min-height:100svh;width:min(100% - 36px,900px);margin:auto;display:flex;flex-direction:column;justify-content:center}.main span{font:12px var(--font-mono);color:var(--accent)}.main h1{font-size:clamp(3rem,8vw,6rem);line-height:.98;letter-spacing:-.05em;margin:22px 0}.main p{font-size:18px;color:var(--text-2);max-width:550px}.main a{margin-top:30px;text-underline-offset:6px}
