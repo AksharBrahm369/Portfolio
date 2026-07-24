@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { capabilities, journey, profile, socials } from "@/data/portfolio";
 import MobileNavigation from "@/components/MobileNavigation";
+import PortfolioAssistant from "@/components/PortfolioAssistant";
 import ProjectShowcase from "@/components/ProjectShowcase";
 import styles from "./page.module.css";
 
@@ -122,31 +123,8 @@ export default function HomePage() {
 
         <section id="about" className={`${styles.section} ${styles.tintSection}`}>
           <Container>
-            <SectionHeader index="05 / 08" title="About Darshan" intro="The person and principles behind the products." />
-            <div className={styles.aboutGrid}>
-              <div className={styles.aboutCopy}>
-                <span className={styles.aboutKicker}>Engineer. Builder. Lifelong learner.</span>
-                <p className={styles.aboutLead}>I turn the way people work into software that feels clear, dependable, and genuinely useful.</p>
-                <p className={styles.aboutBody}>My work spans education management, attendance workflows, local-business websites, and AI-assisted interfaces. Whatever the domain, I start by understanding the real problem—not just the feature list.</p>
-                <div className={styles.aboutLinks}>
-                  <Link className={styles.primaryButton} href="/credentials">View credentials <Arrow /></Link>
-                  <a className={styles.aboutResume} href="/darshan-zala-resume.pdf" target="_blank">Download résumé <Arrow /></a>
-                </div>
-              </div>
-              <aside className={styles.aboutPanel} aria-label="Professional profile">
-                <div className={styles.aboutPanelTop}>
-                  <span>Working philosophy</span>
-                  <strong>01</strong>
-                </div>
-                <blockquote>“The best software removes friction without drawing attention to itself.”</blockquote>
-                <dl>
-                  <div><dt>Currently exploring</dt><dd>AI-assisted interfaces and full-stack product workflows</dd></div>
-                  <div><dt>Building</dt><dd>DarshonicTech and practical software products</dd></div>
-                  <div><dt>Based in</dt><dd>Gujarat, India</dd></div>
-                </dl>
-                <div className={styles.aboutStatus}><i aria-hidden="true" /> Available for select opportunities</div>
-              </aside>
-            </div>
+            <SectionHeader index="05 / 08" title="Ask about Darshan" intro="A faster, conversational way to explore my work and experience." />
+            <PortfolioAssistant />
           </Container>
         </section>
 
