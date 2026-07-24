@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import { capabilities, journey, profile, projects, socials } from "@/data/portfolio";
+import { capabilities, journey, profile, socials } from "@/data/portfolio";
 import MobileNavigation from "@/components/MobileNavigation";
+import ProjectShowcase from "@/components/ProjectShowcase";
 import styles from "./page.module.css";
 
 const Arrow = () => <span aria-hidden="true">↗</span>;
@@ -46,55 +47,21 @@ function IdentityPanel() {
     <aside className={styles.identityPanel} aria-label="Darshan's professional profile">
       <div className={styles.portrait}>
         <Image src="/profile pic.jpg" alt="Darshan Zala" fill priority sizes="(max-width: 760px) 100vw, 440px" />
-        <span className={styles.coordinates}>22.30°N / 70.80°E</span>
+        
       </div>
       <div className={styles.identityBody}>
-        <div><span className={styles.eyebrow}>Identity / 01</span><h2>Darshan Zala</h2><p>Software Engineer · Full-Stack Developer</p></div>
-        <dl className={styles.identityFacts}>
-          <div><dt>Current focus</dt><dd>Full-stack web applications</dd></div>
-          <div><dt>Working with</dt><dd>React · Next.js · APIs · AI</dd></div>
-          <div><dt>Based in</dt><dd>Gujarat, India</dd></div>
-        </dl>
+        <div>
+          <span className={styles.eyebrow}>Identity / 01</span>
+          <h2>Darshan Zala</h2>
+          <p>Software Engineer · Full-Stack Developer</p>
+          <p className={styles.founder}>Founder of Darshonic</p>
+        </div>
       </div>
     </aside>
   );
 }
 
-function ProjectImage({ project, priority = false }: { project: (typeof projects)[number]; priority?: boolean }) {
-  return (
-    <div className={styles.projectImage}>
-      <Image src={project.image} alt={`${project.title} interface`} fill priority={priority} sizes="(max-width: 760px) 100vw, 680px" />
-      <span className={styles.imageIndex}>{project.index}</span>
-    </div>
-  );
-}
-
-function FeaturedProject({ project, reverse }: { project: (typeof projects)[number]; reverse?: boolean }) {
-  return (
-    <article className={`${styles.featuredProject} ${reverse ? styles.reverse : ""}`}>
-      <ProjectImage project={project} />
-      <div className={styles.projectInfo}>
-        <span className={styles.eyebrow}>{project.category}</span>
-        <h3>{project.title}</h3>
-        <p className={styles.projectSummary}>{project.summary}</p>
-        <dl className={styles.projectDetails}>
-          <div><dt>The problem</dt><dd>{project.problem}</dd></div>
-          <div><dt>My contribution</dt><dd>{project.contribution}</dd></div>
-          <div><dt>Outcome</dt><dd>{project.outcome}</dd></div>
-        </dl>
-        <div className={styles.tags}>{project.technologies.map((tech) => <span key={tech}>{tech}</span>)}</div>
-        <div className={styles.projectLinks}>
-          <a href={project.live} target="_blank" rel="noreferrer">Live project <Arrow /></a>
-          <Link href={`/projects/${project.slug}`}>Project details →</Link>
-        </div>
-      </div>
-    </article>
-  );
-}
-
 export default function HomePage() {
-  const featured = projects.slice(0, 2);
-  const secondary = projects.slice(2);
   return (
     <>
       <a className={styles.skipLink} href="#main">Skip to content</a>
@@ -125,22 +92,7 @@ export default function HomePage() {
         <section id="work" className={styles.section}>
           <Container>
             <SectionHeader index="02 / 08" title="Selected work" intro="Products spanning business operations, community workflows, local commerce, and AI experimentation." />
-            <div className={styles.featuredList}>
-              <FeaturedProject project={featured[0]} />
-              <FeaturedProject project={featured[1]} reverse />
-            </div>
-            <div className={styles.projectGrid}>
-              {secondary.map((project) => (
-                <article className={styles.projectCard} key={project.slug}>
-                  <ProjectImage project={project} />
-                  <div className={styles.cardBody}>
-                    <span className={styles.eyebrow}>{project.category}</span><h3>{project.title}</h3><p>{project.summary}</p>
-                    <div className={styles.tags}>{project.technologies.map((tech) => <span key={tech}>{tech}</span>)}</div>
-                    <div className={styles.projectLinks}><a href={project.live} target="_blank" rel="noreferrer">Live project <Arrow /></a><Link href={`/projects/${project.slug}`}>Details →</Link></div>
-                  </div>
-                </article>
-              ))}
-            </div>
+            <ProjectShowcase />
           </Container>
         </section>
 
@@ -170,15 +122,30 @@ export default function HomePage() {
 
         <section id="about" className={`${styles.section} ${styles.tintSection}`}>
           <Container>
-            <SectionHeader index="05 / 08" title="About Darshan" />
+            <SectionHeader index="05 / 08" title="About Darshan" intro="The person and principles behind the products." />
             <div className={styles.aboutGrid}>
-              <div className={styles.aboutPortrait}><Image src="/profile.png" alt="Portrait of Darshan Zala" fill sizes="(max-width: 760px) 100vw, 480px" /></div>
               <div className={styles.aboutCopy}>
-                <p>I’m a software engineer who enjoys understanding how people work and finding simpler ways to support that work through software.</p>
-                <p>My projects have introduced me to education management, attendance workflows, small-business websites, and AI-assisted interfaces. Across them, I focus on clear interactions, reliable functionality, and learning from real use.</p>
-                <dl><div><dt>Currently exploring</dt><dd>AI-assisted interfaces and full-stack product workflows</dd></div><div><dt>Building</dt><dd>DarshonicTech and practical software products</dd></div><div><dt>Based in</dt><dd>Gujarat, India</dd></div></dl>
-                <Link className={styles.textLink} href="/credentials">View credentials →</Link>
+                <span className={styles.aboutKicker}>Engineer. Builder. Lifelong learner.</span>
+                <p className={styles.aboutLead}>I turn the way people work into software that feels clear, dependable, and genuinely useful.</p>
+                <p className={styles.aboutBody}>My work spans education management, attendance workflows, local-business websites, and AI-assisted interfaces. Whatever the domain, I start by understanding the real problem—not just the feature list.</p>
+                <div className={styles.aboutLinks}>
+                  <Link className={styles.primaryButton} href="/credentials">View credentials <Arrow /></Link>
+                  <a className={styles.aboutResume} href="/darshan-zala-resume.pdf" target="_blank">Download résumé <Arrow /></a>
+                </div>
               </div>
+              <aside className={styles.aboutPanel} aria-label="Professional profile">
+                <div className={styles.aboutPanelTop}>
+                  <span>Working philosophy</span>
+                  <strong>01</strong>
+                </div>
+                <blockquote>“The best software removes friction without drawing attention to itself.”</blockquote>
+                <dl>
+                  <div><dt>Currently exploring</dt><dd>AI-assisted interfaces and full-stack product workflows</dd></div>
+                  <div><dt>Building</dt><dd>DarshonicTech and practical software products</dd></div>
+                  <div><dt>Based in</dt><dd>Gujarat, India</dd></div>
+                </dl>
+                <div className={styles.aboutStatus}><i aria-hidden="true" /> Available for select opportunities</div>
+              </aside>
             </div>
           </Container>
         </section>
