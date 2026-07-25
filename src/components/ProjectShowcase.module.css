@@ -4,3 +4,5 @@
 @media(max-width:900px){.showcase{display:flex;flex-direction:column}.projectList{padding:0;border-right:0}.projectRow{min-height:88px;grid-template-columns:36px minmax(0,1fr) minmax(130px,.6fr) 24px}.preview{position:static;order:-1;width:100%;margin:0 0 24px;border-radius:14px}.screenshot{aspect-ratio:16/9}.previewBody{padding:20px}.previewBody p{font-size:14px;-webkit-line-clamp:3}}
 @media(max-width:600px){.listLabel{height:46px}.projectRow{min-height:78px;grid-template-columns:30px minmax(0,1fr) 22px;gap:10px}.projectRow:hover,.projectRow:focus-visible{transform:translateY(-2px) scale(1.008)}.rowCategory{display:none}.rowTitle{font-size:18px}.previewBody{padding:20px}.previewBody h3{font-size:29px}.previewBody p{min-height:0}.actions{flex-wrap:wrap}}
 @media(prefers-reduced-motion:reduce){.timer{display:none}.screenshot img{animation:none}.projectRow,.rowIndex,.rowTitle,.rowArrow{transition:none}.projectRow:hover,.projectRow:focus-visible{transform:none}}
+
+.screenshot img{object-position:center center}
