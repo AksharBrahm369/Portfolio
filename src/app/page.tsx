@@ -23,18 +23,6 @@ function SectionHeader({ index, title, intro }: { index: string; title: string; 
   );
 }
 
-function PortfolioChrome() {
-  return (
-    <div className={styles.portfolioChrome} aria-label="Portfolio identity">
-      <Link href="/" className={styles.signature} aria-label="Darshan Zala, home">
-        <span>DZ</span>
-        <strong>Darshan Zala</strong>
-      </Link>
-      <span className={styles.availability}><i aria-hidden="true" /> Available for select projects</span>
-    </div>
-  );
-}
-
 function IdentityPanel() {
   return (
     <aside className={styles.identityPanel} aria-label="Darshan's professional profile">
@@ -58,7 +46,6 @@ export default function HomePage() {
   return (
     <>
       <a className={styles.skipLink} href="#main">Skip to content</a>
-      <PortfolioChrome />
       <main id="main">
         <section className={styles.hero}>
           <Container className={styles.heroGrid}>
