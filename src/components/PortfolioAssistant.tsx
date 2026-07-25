@@ -159,18 +159,32 @@ export default function PortfolioAssistant() {
     endRef.current?.scrollIntoView({ behavior: "smooth", block: "nearest" });
   }, [messages, thinking]);
 
-  function ask(question: string) {
+  async function ask(question: string) {
     const cleanQuestion = question.trim().slice(0, 240);
     if (!cleanQuestion || thinking) return;
 
+    const conversation = messages;
     setMessages((current) => [...current, { role: "user", content: cleanQuestion }]);
     setInput("");
     setThinking(true);
 
-    window.setTimeout(() => {
+    try {
+      const response = await fetch("/api/assistant", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          question: cleanQuestion,
+          history: conversation.slice(-8),
+        }),
+      });
+      const data = await response.json() as { answer?: string };
+      const answer = response.ok && data.answer ? data.answer : getAnswer(cleanQuestion);
+      setMessages((current) => [...current, { role: "assistant", content: answer }]);
+    } catch {
       setMessages((current) => [...current, { role: "assistant", content: getAnswer(cleanQuestion) }]);
+    } finally {
       setThinking(false);
-    }, 450);
+    }
   }
 
   function submit(event: FormEvent<HTMLFormElement>) {
