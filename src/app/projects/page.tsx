@@ -5,12 +5,10 @@ import { projects } from "@/data/portfolio";
 import styles from "./projects.module.css";
 
 export const metadata: Metadata = {
-  title: "More Projects",
-  description: "More software projects by Darshan Zala across local commerce, business websites, and AI interfaces.",
+  title: "All Projects",
+  description: "All software projects by Darshan Zala across education, community workflows, local commerce, business websites, and AI interfaces.",
   alternates: { canonical: "/projects" },
 };
-
-const otherProjects = projects.slice(2);
 
 export default function ProjectsPage() {
   return (
@@ -21,16 +19,16 @@ export default function ProjectsPage() {
       </nav>
 
       <header className={styles.header}>
-        <span>Project archive / 03–05</span>
-        <h1>More projects</h1>
+        <span>Complete project archive / 01–05</span>
+        <h1>All projects</h1>
         <p>
-          Additional work across local commerce, small-business websites, and
-          conversational interface experiments.
+          Explore the complete collection across education, community workflows,
+          local commerce, business websites, and AI experiments.
         </p>
       </header>
 
-      <section className={styles.grid} aria-label="More projects">
-        {otherProjects.map((project) => {
+      <section className={styles.grid} aria-label="All projects">
+        {projects.map((project) => {
           const hostname = new URL(project.live).hostname.replace("www.", "");
           return (
             <article className={styles.card} key={project.slug}>
