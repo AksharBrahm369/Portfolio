@@ -197,11 +197,12 @@ export default function PortfolioAssistant() {
       <div className={styles.assistantIntro}>
         <span className={styles.aboutKicker}>Interactive profile / AI assistant</span>
         <h3>Curious about my work? Just ask.</h3>
-        <p>Explore my experience conversationally—projects, services, skills, DARSHONIC, working style, and availability.</p>
+        <p>I’m Darshan Zala, Founder of DARSHONIC. Explore my experience conversationally—projects, services, skills, working style, and availability.</p>
         <div className={styles.assistantMeta}>
           <span><i aria-hidden="true" /> Online</span>
           <span>Answers from verified portfolio data</span>
         </div>
+        <Link className={styles.assistantResume} href="https://darshonic.vercel.app/" target="_blank" rel="noreferrer">Visit DARSHONIC ↗</Link>
         <Link className={styles.assistantResume} href="/darshan-zala-resume.pdf" target="_blank">Prefer the full résumé? Open PDF ↗</Link>
       </div>
 
