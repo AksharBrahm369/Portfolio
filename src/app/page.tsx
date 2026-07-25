@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { capabilities, journey, profile, socials } from "@/data/portfolio";
-import MobileNavigation from "@/components/MobileNavigation";
 import PortfolioAssistant from "@/components/PortfolioAssistant";
 import ProjectShowcase from "@/components/ProjectShowcase";
 import styles from "./page.module.css";
@@ -24,22 +23,15 @@ function SectionHeader({ index, title, intro }: { index: string; title: string; 
   );
 }
 
-function Header() {
+function PortfolioChrome() {
   return (
-    <header className={styles.header}>
-      <Container className={styles.headerInner}>
-        <Link href="/" className={styles.brand} aria-label="Darshan Zala, home">
-          <span className={styles.monogram}>DZ</span>
-          <span><strong>Darshan Zala</strong><small>Software Engineer</small></span>
-        </Link>
-        <nav className={styles.desktopNav} aria-label="Primary navigation">
-          <a href="#work">Work</a><a href="#capabilities">Capabilities</a><a href="#journey">Journey</a>
-          <a href="#about">About</a><a href="#contact">Contact</a>
-          <a href="/darshan-zala-resume.pdf" target="_blank">Résumé <Arrow /></a>
-        </nav>
-        <MobileNavigation />
-      </Container>
-    </header>
+    <div className={styles.portfolioChrome} aria-label="Portfolio identity">
+      <Link href="/" className={styles.signature} aria-label="Darshan Zala, home">
+        <span>DZ</span>
+        <strong>Darshan Zala</strong>
+      </Link>
+      <span className={styles.availability}><i aria-hidden="true" /> Available for select projects</span>
+    </div>
   );
 }
 
@@ -66,7 +58,7 @@ export default function HomePage() {
   return (
     <>
       <a className={styles.skipLink} href="#main">Skip to content</a>
-      <Header />
+      <PortfolioChrome />
       <main id="main">
         <section className={styles.hero}>
           <Container className={styles.heroGrid}>
